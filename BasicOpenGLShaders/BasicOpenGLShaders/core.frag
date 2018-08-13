@@ -7,11 +7,17 @@
 
 #version 330 core
 
+// The input for fragment shader, which is received from fragment
+// NOTE: Please make sure the variable names for input (in our case vec3 ourColor) matches exactly with
+//		 the output from the vertex shader
 in vec3 ourColor;
 
+// output variable for the color, this is used to display the final result on the screen
+// after performing necessary operations on it.
 out vec4 color;
 
 void main()
 {
+	// In this case we simply copy the input color to the output variable without any modifications.
 	color = vec4(ourColor, 1.0f);
 }

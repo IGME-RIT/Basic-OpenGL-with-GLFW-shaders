@@ -7,13 +7,21 @@
 // to be distorted or reshaped in any manner
 
 #version 330 core
+
+// Vertex attribute for position, which is at location 0
 layout (location = 0) in vec3 position;
+// Vertex attribute for color, which is at location 1
 layout (location = 1) in vec3 color;
 
+// The output color from vertex shader which will feed into fragment shader
 out vec3 ourColor;
 
 void main()
 {
+	// gl_Position is inbuilt vertex shader output variable of type vec4.
+	// In our case we store the position of the vertex in the variable
 	gl_Position = vec4(position, 1.0);
+
+	// store the color in ourColor output variable
 	ourColor = color;
 }
